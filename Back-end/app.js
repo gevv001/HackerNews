@@ -13,7 +13,6 @@ app.use(errorHandler)
 
 
 let PORT = process.env.PORT || 3000
-PORT = 3003
 connectDB();
 
 mongoose.connection.once('open', () => {
