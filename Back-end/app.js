@@ -3,11 +3,13 @@ import { configDotenv } from "dotenv";
 import mongoose from "mongoose";
 import connectDB from "./Config/db.js";
 import apiRoutes from "./Routes/apiRoute.js";
+import errorHandler from "./Middleware/errorHandler.js";
 configDotenv();
 let app = express();
 
 app.use(express.json())
 app.use('/api', apiRoutes)
+app.use(errorHandler)
 
 
 let PORT = process.env.PORT || 3000
