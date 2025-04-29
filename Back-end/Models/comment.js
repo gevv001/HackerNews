@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { returnModel } from "../Utils/returnModel.js";
 
 const commentSchema = new mongoose.Schema({
     text: { type: String, required: true },
