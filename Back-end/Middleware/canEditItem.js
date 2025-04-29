@@ -12,8 +12,10 @@ export const canEditItem = (type) => {
         switch (type) {
             case 'comment':
                 item = await CommentModel.findById(id);
+                break;
             case 'post':
                 item = await PostModel.findById(id);
+                break;
         }
 
 
