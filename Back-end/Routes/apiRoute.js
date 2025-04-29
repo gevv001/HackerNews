@@ -13,6 +13,6 @@ apiRoutes.use('/auth', authRoute);
 apiRoutes.use('/submit', authMiddleware, submitRoute);
 apiRoutes.use('/show', showRoute);
 apiRoutes.use('/ask', askRoute);
-apiRoutes.use('/comments', authMiddleware, commentRoute);
+apiRoutes.use('/comments', commentRoute);
 
 export default apiRoutes
