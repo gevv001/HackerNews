@@ -3,7 +3,7 @@ import { PostModel } from "../Models/post.js";
 
 export const writeComment = async (req, res) => {
     const { text, postId, parentComId } = req.body;
-    const { author } = req.user
+    const author = req.user
 
 
     if (!text || !postId) {
