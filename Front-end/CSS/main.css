@@ -1,0 +1,94 @@
+/* Global layout */
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    background-color: #f6f6ef;
+    color: #000;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #ff6600;
+    padding: 2px 5px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    margin-right: 1rem;
+    white-space: nowrap;
+}
+
+/* Navigation links */
+.nav-links,
+.nav-profile {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li,
+.nav-profile li {
+    display: inline;
+}
+
+.nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.login,
+#logout {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 14px;
+    padding: 0;
+}
+
+#logout:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #f0f0f0;
+}
+
+footer hr {
+    margin-top: 10px;
+    background-color: #ff6600;
+    height: 5px;
+}
+
+footer p{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+post-actions{
+    background-color: #fff;
+    size: 20px;
+}
