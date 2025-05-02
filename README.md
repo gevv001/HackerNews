@@ -33,7 +33,9 @@ npx http-server -p 5000 --spa
 Create .env in HackerNews/Back-end
 JWT_SECRET=your_jwt_secret
 PORT=3000
-DB_URI=mongodb+srv://gevorg120torosyan:PamCvrUJgKXlPqHR@cluster0.zoxeyex.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+DDB_URI=mongodb+srv://<your-username>:<your-password>@<your-cluster>.mongodb.net/<your-db-name>?retryWrites=true&w=majority
+
+> ⚠️ Replace the values with your own MongoDB Atlas URI.
 
 
 🔧 Technologies Used
