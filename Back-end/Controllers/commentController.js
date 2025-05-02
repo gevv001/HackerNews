@@ -1,4 +1,4 @@
-import Comment from "../Models/comment.js";
+import Comment, { CommentModel } from "../Models/comment.js";
 import { PostModel } from "../Models/post.js";
 
 export const writeComment = async (req, res) => {
@@ -17,7 +17,7 @@ export const writeComment = async (req, res) => {
     }
 
     if (parentComId) {
-        const parentComment = await Comment.findById(parentComId);
+        const parentComment = await CommentModel.findById(parentComId);
         if (!parentComment) {
             return res.status(404).json({ message: "Parent comment not found" });
         }

@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     about: String,
 }, { timestamps: true })
 
-const UserModel = mongoose.model('User', userSchema)
+export const UserModel = mongoose.model('User', userSchema)
 
 class User {
     static async register(username, password) {
