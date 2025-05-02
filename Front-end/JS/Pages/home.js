@@ -12,8 +12,10 @@ const typeManager = {
 }
 
 export async function createMainPage(type = 'news') {
+    let page = 1;
     const main = document.getElementById('main');
     main.innerHTML = '';
+    
 
     const postList = document.createElement('ol');
     postList.classList.add('post-list');
@@ -28,16 +30,15 @@ export async function createMainPage(type = 'news') {
     moreButton.addEventListener('click', async () => {
         await loadItems(postList);
         page++;
+
     })
 
     main.appendChild(postList)
     main.appendChild(moreButton)
 
     async function loadItems(postList) {
-        console.log('typeManager[type]:', typeManager[type]);
         
-        const items = await fetchPosts(typeManager[type], page);
-        console.log(items);
+        const items = await fetchPosts(type, page);
         
         if (items.length == 0) {
             if (document.getElementById('noPosts')) return;
@@ -49,12 +50,13 @@ export async function createMainPage(type = 'news') {
             return;
         }
 
-        let createItem = type == 'comment' ? createComment : createPostItem;
+        let createItem = type == 'comments' ? createComment : createPostItem;
 
         items.forEach(element => {
             const postEl = createItem(element);
             postList.appendChild(postEl)
         });
+        page++;
 
     }
 }

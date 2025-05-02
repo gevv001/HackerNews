@@ -1,8 +1,12 @@
-export const createNavBar = (authorized = false) => {
+import { loadPage } from "../../router.js";
+import { isLoggedIn, logout } from "../API/auth.js";
+
+export const createNavBar = () => {
     const header = document.getElementById('header');
     header.classList.add('navbar');
     
-    
+    const authorized = isLoggedIn()
+
     if (!authorized) {
         header.innerHTML = `
             <nav class="nav">
@@ -30,15 +34,20 @@ export const createNavBar = (authorized = false) => {
                     <li><a href="/submit" data-link>Submit</a></li>
                 </ul>
                 <ul class="nav-profile">
-                    <li><a href="/user" data-link>Profile</a></li>
+                    <li><a href="/user">Profile</a></li>
                     <li><button id="logout">Log out</button></li>
                 </ul>
             </nav>
         `;
     }
-
-    const app = document.getElementById('app');
-    console.log(app);
     
-    app.prepend(header); 
+    const logOut = document.getElementById('logout');
+    if (logOut) {
+        logOut.addEventListener('click', () => {
+            logout()
+            createNavBar();
+            history.pushState({}, '', '/');
+            loadPage();
+        })
+    }
 };

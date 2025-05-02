@@ -9,6 +9,7 @@ export const createPostItem = (post) => {
         </p>
         <p class="post-meta">
             by <a href="/user?id=${post.author.username}"><strong>${post.author.username}</strong></a> • ${new Date(post.createdAt).toLocaleString()}
+            <a href="/item/${post._id}">discuss</a>    
         </p>
     `
     return postElem
